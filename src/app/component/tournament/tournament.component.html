@@ -1,0 +1,53 @@
+<!-- Add teams page -->
+<div class='container'>
+  <!-- LOL character bottom page -->
+  <img src='assets/images/lolcharacterJax.png' class='character'/>
+
+  <!-- Add teams -->
+  <div class='team-form'>
+      <h1>Add your teams and become a hero</h1>
+      <p>This tournament requires 4 players</p>
+
+      <!-- form add teams -->
+      <form class="add-new-team" [formGroup]="form">
+          
+          <!-- sub team name -->
+          <div class="sub-name">
+            <label>Team Name</label><br>
+            <input type="text" placeholder="Ex.: Nibo Team" formControlName="name">
+          </div>
+
+          <!-- sub team logo -->
+          <div class="sub-logo">
+            <label>Team Logo</label><br>
+            <input type="text" placeholder=" Ex.: htttps://....png" formControlName="logo">
+          </div>
+          
+          <!-- submit all form to localstorage -->
+          <button type="submit" class="save-team" [disabled]="form.invalid" (click)="add()">Save</button>
+      </form>
+  </div>
+
+<!-- Load teams add -->
+  <div class="name-teams">
+
+    <!-- map localstorage /teams -->
+    <div *ngFor="let team of teams" class="team-show">
+        <div class="row">
+            <!-- team logo -->
+            <img class="team-logo" [src]="team.logo === null ? defaultImage : team.logo" />
+
+            <div class="columns-row">
+              <!-- team name -->
+              <h2 class="team-name">{{team.name}}</h2>
+
+              <!-- remove team button -->
+              <button type="button" (click)="del(team)" class="delete-team">Delete Team</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- start battles button -->
+  <button class="start-tournament" type="submit" routerLink="/battles" [disabled]="readyTeams != 4" [hidden]="teams.length <= 3">Start Battles</button>
+</div>

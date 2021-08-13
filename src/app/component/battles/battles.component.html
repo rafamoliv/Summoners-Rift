@@ -1,0 +1,97 @@
+<!-- container -->
+<div class="container">
+  <h1 class="title-battles">Battles</h1>
+
+  <!-- battle container -->
+  <div class="battles">
+    <!-- start semifinals -->
+    <div class="semifinal-battles">
+      <h2>Semi Finals</h2>
+      <div class="flex-wrap">
+        <!-- semifinal Battle 1 -->
+        <div class="battle battle-semifinals">
+          <div *ngFor="let team of semiFinalsBattle1" class="bracket">
+            <div>
+              <img
+                class="team-logo"
+                [src]="team.logo === null ? defaultImage : team.logo"
+              />
+              <br />
+              <button
+                type="button"
+                [ngClass]="
+                  team.semiFinalsWinner ? 'button-winner' : 'team-button'
+                "
+                (click)="semiFinalsWinner(team, 1)"
+                [disabled]="semiFinalsWinnerBattle1"
+              >
+                {{ team.name }}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- semifinal Battle 2 -->
+        <div class="battle battle-semifinals">
+          <div *ngFor="let team of semiFinalsBattle2" class="bracket">
+            <div>
+              <img
+                class="team-logo"
+                [src]="team.logo === null ? defaultImage : team.logo"
+              />
+              <br />
+              <button
+                type="button"
+                [ngClass]="
+                  team.semiFinalsWinner ? 'button-winner' : 'team-button'
+                "
+                (click)="semiFinalsWinner(team, 2)"
+                [disabled]="semiFinalsWinnerBattle2"
+              >
+                {{ team.name }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- start final -->
+      <div class="final-battle">
+        <h2>Final</h2>
+        <div class="battle battle-final">
+          <div *ngFor="let team of final" class="bracket">
+            <div>
+              <img
+                class="team-logo"
+                [src]="team.logo === null ? defaultImage : team.logo"
+              />
+              <button
+                type="button"
+                [ngClass]="team.finalWinner ? 'button-winner' : 'team-button'"
+                (click)="finalWinner(team)"
+                [disabled]="finalWinnerTournament"
+              >
+                {{ team.name }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- declaire winner -->
+      <div class="winner">
+        <h2>Winner</h2>
+        <div *ngFor="let team of winner" class="winner-tournament">
+          <img
+            class="team-logo-winner"
+            [src]="team.logo === null ? defaultImage : team.logo"
+          />
+          <h1>{{ team.name }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOL character bottom page -->
+  <img src="assets/images/lolcharacterZed.png" class="character" />
+</div>

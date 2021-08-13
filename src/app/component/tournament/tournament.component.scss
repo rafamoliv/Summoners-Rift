@@ -1,0 +1,181 @@
+//Geral
+label {
+  font-size: 1.5rem;
+  margin-right: 40px;
+}
+
+input {
+  border-radius: 5px;
+  border: 0;
+  font-size: 1.2rem;
+  color: rgba(113, 121, 126, 1);
+  padding: 5px;
+
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+button {
+  cursor: pointer;
+  color: #000;
+  background: #d3d3d3;
+  border: 0;
+  padding: 5px;
+
+  &:hover {
+    background: rgba(113, 121, 126, 1);
+  }
+}
+
+//Class
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+}
+
+//form classes
+.add-new-team {
+  margin-top: 25px;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  text-align: center;
+
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-name {
+  margin-right: 15px;
+}
+
+//teams classes
+.name-teams {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  margin-top: 25px;
+}
+
+.team-show {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin: 10px;
+  width: 350px;
+  height: 160px;
+}
+
+.team-logo {
+  height: 150px;
+  max-width: 175px;
+  margin-right: 25px;
+  padding: 10px;
+}
+
+.team-name {
+  margin-bottom: 12px;
+}
+
+// row classes
+.row {
+  display: flex;
+  flex-direction: row;
+
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+//buttons
+.save-team {
+  padding: 18px 15px 18px 15px;
+  margin-left: 10px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.delete-team {
+  background: #fa8072;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 5px;
+  width: 125px;
+
+  &:hover {
+    background: #8b0000;
+    color: #fff;
+  }
+}
+
+.start-tournament {
+  padding: 15px;
+  margin-top: 25px;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+  background: #d3d3d3;
+
+  &:hover {
+    background-color: rgba(113, 121, 126, 1);
+  }
+}
+
+//choracter bottom
+.character {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 20%;
+}
+
+//Responsive
+@media (max-width: 1024px) {
+  .add-new-team,
+  .name-teams,
+  .start-tournament {
+    margin-top: 15px;
+  }
+
+  .start-tournament {
+    margin-bottom: -35px;
+  }
+}
+
+@media (max-width: 550px) {
+  .name-teams {
+    display: block;
+  }
+
+  .team-form {
+    margin-top: 25px;
+  }
+
+  .start-tournament {
+    margin-bottom: 8px;
+  }
+
+  .character {
+    display: none;
+  }
+}
